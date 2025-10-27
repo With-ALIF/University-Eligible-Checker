@@ -1,0 +1,153 @@
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #94a3b8;
+  --accent: #7c3aed;
+  --glass: rgba(255, 255, 255, 0.04);
+  font-family: 'Hind Siliguri', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #071027 0%, var(--bg) 100%);
+  color: #e6eef8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* সব নিচে নিচে যাবে */
+  align-items: center;
+  justify-content: flex-start; /* উপরের দিক থেকে শুরু */
+  padding: 32px 16px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* card এর মধ্যে ফাঁকা */
+}
+
+header {
+  display: flex;
+  flex-direction: column; /* logo ও heading নিচে নিচে */
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), #4c1d95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 22px;
+  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.18);
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+p.lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* card এর ভিতরের elements নিচে নিচে সুন্দরভাবে */
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+input[type=number],
+select,
+input[type=text] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: inherit;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column; /* নিচে নিচে বাটন */
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 0;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%; /* full width */
+}
+
+.btn.edge {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.result {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.06), rgba(255, 255, 255, 0.01));
+  text-align: center;
+}
+
+.circulars, .subject-grid {
+  display: flex;
+  flex-direction: column; /* সব নিচে নিচে */
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.citem, .ditem {
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.025);
+}
+
+.note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+footer {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+  }
