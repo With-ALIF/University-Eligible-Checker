@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>University Eligibility Checker — প্রো স্টাইল</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">UE</div>
+      <div>
+        <h1>University Eligibility Checker</h1>
+        <p class="lead">প্রো লেভেল UI — Hind Siliguri ফন্ট ব্যবহার করা হয়েছে। ইনপুট দিন এবং চেক করুন কে এলিজিবল।</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h3 style="margin-top:0">শিক্ষার্থী তথ্য</h3>
+        <div style="display:grid;gap:10px;margin-top:10px">
+
+          <div>
+            <label>Student Name</label>
+            <input id="name" type="text" placeholder="নাম লিখুন (ঐচ্ছিক)" />
+          </div>
+
+          <div class="row">
+            <div style="flex:1">
+              <label>SSC Year</label>
+              <input id="ssc" type="number" min="1900" max="2100" value="2019" />
+            </div>
+            <div style="width:140px">
+              <label>SSC GPA</label>
+              <input id="ssc_gpa" type="number" min="0" max="5" step="0.01" value="5" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div style="flex:1">
+              <label>HSC Year</label>
+              <input id="hsc" type="number" min="1900" max="2100" value="2021" />
+            </div>
+            <div style="width:140px">
+              <label>HSC GPA</label>
+              <input id="hsc_gpa" type="number" min="0" max="5" step="0.01" value="5" />
+            </div>
+          </div>
+
+          <div>
+            <label>Department / Apply for</label>
+            <select id="dept">
+              <option value="medical">Medical</option>
+              <option value="engineering">Engineering</option>
+              <option value="university">University (General)</option>
+            </select>
+          </div>
+
+          <div style="display:flex;gap:12px;align-items:center">
+            <input id="second_timer" type="checkbox" />
+            <label for="second_timer" style="margin:0">Second-timer / সেকেন্ড টাইম আবেদন করছেন?</label>
+          </div>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:8px 0">
+
+          <h4 style="margin:0">পাঠ্য বিষয়গুলোর মার্ক (প্রতি বিষয় ০–১০০)</h4>
+          <div class="subject-grid">
+            <div>
+              <label>Physics (ফিজিক্স)</label>
+              <input id="marks_physics" type="number" min="0" max="100" value="80" />
+            </div>
+            <div>
+              <label>Chemistry (কেমিস্ট্রি)</label>
+              <input id="marks_chemistry" type="number" min="0" max="100" value="80" />
+            </div>
+            <div>
+              <label>Math (ম্যাথ)</label>
+              <input id="marks_math" type="number" min="0" max="100" value="80" />
+            </div>
+            <div>
+              <label>Biology (বায়োলজি)</label>
+              <input id="marks_bio" type="number" min="0" max="100" value="80" />
+            </div>
+            <div>
+              <label>English (ইংরেজি)</label>
+              <input id="marks_eng" type="number" min="0" max="100" value="80" />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="checkBtn" class="btn">Check Eligibility</button>
+            <button id="resetBtn" class="btn edge">Reset</button>
+          </div>
+
+          <div class="note">
+            <strong>নোট:</strong> SSC এবং HSC এর মধ্যে gap সর্বোচ্চ ২ বছর হতে হবে। GPA ৫.০০ এর কম হলে <strong>-2</strong> ও Second-timer হলে <strong>-5</strong> মার্ক কাটা হবে।
+          </div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h3 style="margin-top:0">রেজাল্ট & সার্কুলার</h3>
+        <div id="output" class="result">
+          ফর্ম পূরণ করে "Check Eligibility" ক্লিক করুন।
+        </div>
+
+        <div id="circularsWrap" style="display:none">
+          <h4 style="margin:12px 0 6px 0">আপনার বিভাগের সংশ্লিষ্ট সার্কুলার</h4>
+          <div id="circulars" class="circulars"></div>
+        </div>
+
+        <div class="dlist" id="deductions" style="display:none"></div>
+
+        <footer>
+          Developed for you — প্রো স্টাইল UI. Modify circular links as needed.
+        </footer>
+      </aside>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+                </html>
