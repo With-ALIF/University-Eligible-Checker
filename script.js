@@ -6,8 +6,9 @@
    - Now supports: total GPA requirement (SSC + HSC ≥ total_gpa_required)
 */
 
+
 (() => {
-  const JSON_PATH = './universities.json'; // path to your JSON
+  const JSON_PATH = './universities.json';
 
   // DOM references
   const sscEl = document.getElementById('ssc');
@@ -28,7 +29,6 @@
 
   let universities = [];
 
-  // ----------- Load JSON -------------
   async function loadUniversities() {
     try {
       const res = await fetch(JSON_PATH, { cache: "no-cache" });
@@ -42,7 +42,6 @@
     }
   }
 
-  // ----------- Utilities -------------
   function toFloat(v) {
     const n = parseFloat(v);
     return isNaN(n) ? 0 : n;
@@ -52,12 +51,10 @@
     return gpa >= 0.0 && gpa <= 5.0;
   }
 
-  // ----------- Read Student Input -------------
   function readStudent() {
     const sscGpa = toFloat(sscGpaEl.value);
     const hscGpa = toFloat(hscGpaEl.value);
 
-    // Validate GPA
     if (!validateGPA(sscGpa)) {
       alert("SSC GPA must be between 0.0 and 5.0");
       sscGpaEl.focus();
@@ -70,7 +67,6 @@
     }
 
     return {
-      name: document.getElementById('name')?.value || '',
       ssc_year: toFloat(sscEl.value),
       ssc_gpa: sscGpa,
       hsc_year: toFloat(hscEl.value),
@@ -83,23 +79,20 @@
     };
   }
 
-  // ----------- Check Eligibility -------------
   function checkUniversity(uni, student) {
     const c = uni.criteria || {};
 
-    // SSC checks
+    // SSC & HSC individual checks
     if (c.ssc_min_gpa && student.ssc_gpa < toFloat(c.ssc_min_gpa)) return false;
-    if (c.ssc_year_min && student.ssc_year < toFloat(c.ssc_year_min)) return false;
-
-    // HSC checks
     if (c.hsc_min_gpa && student.hsc_gpa < toFloat(c.hsc_min_gpa)) return false;
-    if (c.hsc_year_min && student.hsc_year < toFloat(c.hsc_year_min)) return false;
 
-    // ✅ Total GPA check (SSC + HSC ≥ required)
-    if (c.total_gpa_required) {
-      const total = student.ssc_gpa + student.hsc_gpa;
-      if (total < toFloat(c.total_gpa_required)) return false;
-    }
+    // Total GPA check (SSC + HSC)
+    const total = student.ssc_gpa + student.hsc_gpa;
+    if (c.total_min_gpa && total < toFloat(c.total_min_gpa)) return false;
+
+    // Year checks
+    if (c.ssc_year_min && student.ssc_year < toFloat(c.ssc_year_min)) return false;
+    if (c.hsc_year_min && student.hsc_year < toFloat(c.hsc_year_min)) return false;
 
     // Subject-wise checks
     const subMap = { physics: 'physics', chemistry: 'chemistry', math: 'math', english: 'eng', biology: 'bio' };
@@ -115,10 +108,8 @@
     return true;
   }
 
-  // ----------- Render Results -------------
   function renderResults(matches) {
     circularsTbody.innerHTML = '';
-
     if (matches.length > 0) {
       circularsWrap.style.display = 'block';
       matches.forEach((u, index) => {
@@ -136,18 +127,16 @@
     }
   }
 
-  // ----------- Button Actions -------------
   function runCheck() {
     if (!universities.length) {
       alert('University data not loaded yet.');
       return;
     }
-
     let student;
     try {
       student = readStudent();
-    } catch (e) {
-      return; // invalid input, stop execution
+    } catch {
+      return;
     }
 
     const matches = universities.filter(u => checkUniversity(u, student));
@@ -160,7 +149,6 @@
     circularsTbody.innerHTML = '';
   }
 
-  // ----------- Init -------------
   (async function init() {
     await loadUniversities();
     checkBtn.addEventListener('click', runCheck);
