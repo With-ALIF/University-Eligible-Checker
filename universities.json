@@ -38,10 +38,51 @@
   }
 },
 
+{
+  "id": "ru_a",
+  "name": "Rajshahi University - A Unit",
+  "seat": " NA",
+  "criteria": {
+    "ssc_min_gpa": 3.5,
+    "hsc_min_gpa": 3.5,
+    "total_min_gpa": 8.0,
+    "ssc_year_min": 2020,
+    "hsc_year_min": 2023,
+    "subjects": {
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": null,
+      "biology": null
+    }
+  }
+},
+
+
+{
+  "id": "ru_b",
+  "name": "Rajshahi University - B Unit",
+  "seat": "166",
+  "criteria": {
+    "ssc_min_gpa": 3.5,
+    "hsc_min_gpa": 3.5,
+    "total_min_gpa": 8.0,
+    "ssc_year_min": 2020,
+    "hsc_year_min": 2023,
+    "subjects": {
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": null,
+      "biology": null
+    }
+  }
+},
+
   {
   "id": "ru_c",
   "name": "Rajshahi University - C Unit",
-  "seat": 1470,
+  "seat": "1470",
   "criteria": {
     "ssc_min_gpa": 3.5,
     "hsc_min_gpa": 3.5,
