@@ -18,6 +18,26 @@
     }
   },
 
+{
+  "id": "mist",
+  "name": "Military Institute of Science and Technology (MIST)",
+  "seat": around 570,
+  "criteria": {
+    "hsc_min_gpa": null,
+    "hsc_year_min": 2024,
+    "ssc_min_gpa": 4.0,
+    "ssc_year_min": 2022,
+    "subjects": {
+      "physics": 4.0,
+      "chemistry": 4.0,
+      "math": 4.0,
+      "english": null,
+      "biology": null
+    },
+    "hsc_total_gpa_required": 18
+  }
+},
+
   {
     "id": "ru_c",
     "name": "Rajshahi University C Unit",
