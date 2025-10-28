@@ -4,10 +4,12 @@
     "name": "Bangladesh University of Engineering and Technology (BUET)",
     "seat": "1305",
     "criteria": {
-      "hsc_min_gpa": 5.0,
-      "hsc_year_min": 2025,
+      "hsc_min_gpa": 5.0, 
       "ssc_min_gpa": 4.0,
-      "ssc_year_min": 0,
+      "ssc_year_min": 2022,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2025,
+    "hsc_year_max": 2025,
       "subjects": {
         "physics": 5.0,
         "chemistry": 5.0,
