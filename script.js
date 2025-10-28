@@ -3,6 +3,7 @@
    - Only update universities.json; JS does not need changes.
    - Displays eligible universities in a colorful table.
    - SSC/HSC GPA validation included.
+   - Now supports: total GPA requirement (SSC + HSC ≥ total_gpa_required)
 */
 
 (() => {
@@ -27,6 +28,7 @@
 
   let universities = [];
 
+  // ----------- Load JSON -------------
   async function loadUniversities() {
     try {
       const res = await fetch(JSON_PATH, { cache: "no-cache" });
@@ -40,6 +42,7 @@
     }
   }
 
+  // ----------- Utilities -------------
   function toFloat(v) {
     const n = parseFloat(v);
     return isNaN(n) ? 0 : n;
@@ -49,6 +52,7 @@
     return gpa >= 0.0 && gpa <= 5.0;
   }
 
+  // ----------- Read Student Input -------------
   function readStudent() {
     const sscGpa = toFloat(sscGpaEl.value);
     const hscGpa = toFloat(hscGpaEl.value);
@@ -79,6 +83,7 @@
     };
   }
 
+  // ----------- Check Eligibility -------------
   function checkUniversity(uni, student) {
     const c = uni.criteria || {};
 
@@ -90,7 +95,13 @@
     if (c.hsc_min_gpa && student.hsc_gpa < toFloat(c.hsc_min_gpa)) return false;
     if (c.hsc_year_min && student.hsc_year < toFloat(c.hsc_year_min)) return false;
 
-    // Subject checks
+    // ✅ Total GPA check (SSC + HSC ≥ required)
+    if (c.total_gpa_required) {
+      const total = student.ssc_gpa + student.hsc_gpa;
+      if (total < toFloat(c.total_gpa_required)) return false;
+    }
+
+    // Subject-wise checks
     const subMap = { physics: 'physics', chemistry: 'chemistry', math: 'math', english: 'eng', biology: 'bio' };
     if (c.subjects) {
       for (const sub in c.subjects) {
@@ -104,6 +115,7 @@
     return true;
   }
 
+  // ----------- Render Results -------------
   function renderResults(matches) {
     circularsTbody.innerHTML = '';
 
@@ -124,11 +136,13 @@
     }
   }
 
+  // ----------- Button Actions -------------
   function runCheck() {
     if (!universities.length) {
       alert('University data not loaded yet.');
       return;
     }
+
     let student;
     try {
       student = readStudent();
@@ -146,6 +160,7 @@
     circularsTbody.innerHTML = '';
   }
 
+  // ----------- Init -------------
   (async function init() {
     await loadUniversities();
     checkBtn.addEventListener('click', runCheck);
