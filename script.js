@@ -114,14 +114,14 @@
       if (groupSum < toFloat(c.subjects.group_total)) return false;
     }
 
-    // HSC total GPA check (Physics + Chemistry + Math + English + Bio)
+    // HSC total GPA check (Physics + Chemistry + Math + English)
     if (c.hsc_total_gpa_required) {
       const hscTotal =
         toFloat(student.physics) +
         toFloat(student.chemistry) +
         toFloat(student.math) +
-        toFloat(student.eng) +
-        toFloat(student.bio);
+        toFloat(student.eng) ;
+        
       if (hscTotal < toFloat(c.hsc_total_gpa_required)) return false;
     }
 
