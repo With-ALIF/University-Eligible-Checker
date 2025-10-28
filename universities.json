@@ -1,4 +1,117 @@
 [
+{
+  "id": "du",
+  "name": "University of Dhaka (A Unit)",
+  "seat": "1896",
+  "criteria": {
+    "hsc_min_gpa": 3.5,
+    "ssc_min_gpa": 3.5,
+    "ssc_year_min": 2020,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2025,
+    "hsc_year_max": 2025,
+    "total_min_gpa": 8.0,
+    "subjects": {
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": null,
+      "biology": null
+    }
+  }
+},
+
+
+{
+  "id": "dub",
+  "name": "University of Dhaka (B Unit)",
+  "seat": "944",
+  "criteria": {
+    "hsc_min_gpa": 3.5,
+    "ssc_min_gpa": 3.5,
+    "ssc_year_min": 2020,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2025,
+    "hsc_year_max": 2025,
+    "total_min_gpa": 8.0,
+    "subjects": {
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": null,
+      "biology": null
+    }
+  }
+},
+
+{
+  "id": "duc",
+  "name": "University of Dhaka (C Unit)",
+  "seat": "96",
+  "criteria": {
+    "hsc_min_gpa": 3.5,
+    "ssc_min_gpa": 3.5,
+    "ssc_year_min": 2020,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2025,
+    "hsc_year_max": 2025,
+    "total_min_gpa": 8.0,
+    "subjects": {
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": null,
+      "biology": null
+    }
+  }
+},
+
+{
+  "id": "duCha",
+  "name": "University of Dhaka (Cha Unit)",
+  "seat": "130",
+  "criteria": {
+    "hsc_min_gpa": 3.0,
+    "ssc_min_gpa": 3.0,
+    "ssc_year_min": 2020,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2025,
+    "hsc_year_max": 2025,
+    "total_min_gpa": 6.5,
+    "subjects": {
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": null,
+      "biology": null
+    }
+  }
+},
+
+
+{
+  "id": "duIba",
+  "name": "University of Dhaka (IBA)",
+  "seat": "120",
+  "criteria": {
+    "hsc_min_gpa": 3.5,
+    "ssc_min_gpa": 3.5,
+    "ssc_year_min": 2020,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2025,
+    "hsc_year_max": 2025,
+    "total_min_gpa": 8.0,
+    "subjects": {
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": null,
+      "biology": null
+    }
+  }
+},
+
+
   {
   "id": "buet",
   "name": "Bangladesh University of Engineering and Technology (BUET)",
