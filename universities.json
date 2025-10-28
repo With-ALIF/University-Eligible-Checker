@@ -1,0 +1,39 @@
+[
+  {
+    "id": "buet",
+    "name": "Bangladesh University of Engineering and Technology (BUET)",
+    "seat": "1470",
+    "criteria": {
+      "hsc_min_gpa": 5.0,
+      "hsc_year_min": 2025,
+      "ssc_min_gpa": 4.0,
+      "ssc_year_min": 0,
+      "subjects": {
+        "physics": 5.0,
+        "chemistry": 5.0,
+        "math": 5.0,
+        "english": null,
+        "biology": null
+      }
+    }
+  },
+
+  {
+    "id": "ru_c",
+    "name": "Rajshahi University C Unit",
+    "seat": "1470",
+    "criteria": {
+      "hsc_min_gpa": 4.5,
+      "hsc_year_min": 2023,
+      "ssc_min_gpa": 3.5,
+      "ssc_year_min": 2020,
+      "subjects": {
+        "physics": null,
+        "chemistry": null,
+        "math": null,
+        "english": null,
+        "biology": null
+      }
+    }
+  } 
+]
