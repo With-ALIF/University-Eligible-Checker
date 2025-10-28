@@ -3,9 +3,9 @@
    - Only update universities.json; JS does not need changes.
    - Displays eligible universities in a colorful table.
    - SSC/HSC GPA validation included.
-   - Now supports: total GPA requirement (SSC + HSC ≥ total_gpa_required)
+   - Now supports: total GPA requirement (SSC + HSC ≥ total_min_gpa)
+   - Supports group_total (Physics+Chem+Math) and optional subject minima.
 */
-
 
 (() => {
   const JSON_PATH = './universities.json';
@@ -82,26 +82,62 @@
   function checkUniversity(uni, student) {
     const c = uni.criteria || {};
 
-    // SSC & HSC individual checks
-    if (c.ssc_min_gpa && student.ssc_gpa < toFloat(c.ssc_min_gpa)) return false;
-    if (c.hsc_min_gpa && student.hsc_gpa < toFloat(c.hsc_min_gpa)) return false;
+    // SSC & HSC GPA checks
+    if (c.ssc_min_gpa && student.ssc_gpa < toFloat(c.ssc_min_gpa)) {
+      console.log(`${uni.name}: SSC GPA too low`);
+      return false;
+    }
+    if (c.hsc_min_gpa && student.hsc_gpa < toFloat(c.hsc_min_gpa)) {
+      console.log(`${uni.name}: HSC GPA too low`);
+      return false;
+    }
 
     // Total GPA check (SSC + HSC)
     const total = student.ssc_gpa + student.hsc_gpa;
-    if (c.total_min_gpa && total < toFloat(c.total_min_gpa)) return false;
+    if (c.total_min_gpa && total < toFloat(c.total_min_gpa)) {
+      console.log(`${uni.name}: Total GPA too low`);
+      return false;
+    }
 
     // Year checks
-    if (c.ssc_year_min && student.ssc_year < toFloat(c.ssc_year_min)) return false;
-    if (c.hsc_year_min && student.hsc_year < toFloat(c.hsc_year_min)) return false;
+    if (c.ssc_year_min && student.ssc_year < toFloat(c.ssc_year_min)) {
+      console.log(`${uni.name}: SSC year too old`);
+      return false;
+    }
+    if (c.ssc_year_max && student.ssc_year > toFloat(c.ssc_year_max)) {
+      console.log(`${uni.name}: SSC year too recent`);
+      return false;
+    }
+    if (c.hsc_year_min && student.hsc_year < toFloat(c.hsc_year_min)) {
+      console.log(`${uni.name}: HSC year too old`);
+      return false;
+    }
+    if (c.hsc_year_max && student.hsc_year > toFloat(c.hsc_year_max)) {
+      console.log(`${uni.name}: HSC year too recent`);
+      return false;
+    }
 
     // Subject-wise checks
     const subMap = { physics: 'physics', chemistry: 'chemistry', math: 'math', english: 'eng', biology: 'bio' };
     if (c.subjects) {
       for (const sub in c.subjects) {
+        if (sub === 'group_total') continue; // skip group_total for now
         const min = c.subjects[sub];
         if (min === null || min === undefined) continue;
         const val = toFloat(student[subMap[sub]]);
-        if (val < toFloat(min)) return false;
+        if (val < toFloat(min)) {
+          console.log(`${uni.name}: ${sub} too low`);
+          return false;
+        }
+      }
+    }
+
+    // Group total check (Physics + Chemistry + Math)
+    if (c.subjects && c.subjects.group_total) {
+      const groupSum = student.physics + student.chemistry + student.math;
+      if (groupSum < toFloat(c.subjects.group_total)) {
+        console.log(`${uni.name}: Physics+Chem+Math sum too low`);
+        return false;
       }
     }
 
