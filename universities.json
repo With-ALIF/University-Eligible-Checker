@@ -39,6 +39,29 @@
 },
 
 {
+  "id": "agri",
+  "name": "Cluster Agri",
+  "seat": 3863,
+  "criteria": {
+    "ssc_min_gpa": 4.0,
+    "hsc_min_gpa": 4.0,
+    "total_min_gpa": 8.5,
+    "ssc_year_min": 2021,
+    "ssc_year_max": 2024,
+    "hsc_year_min": 2024,
+    "hsc_year_max": 2025,
+    "subjects": {
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": null,
+      "biology": null
+    }
+  }
+},
+
+
+{
   "id": "ru_a",
   "name": "Rajshahi University - A Unit",
   "seat": " NA",
