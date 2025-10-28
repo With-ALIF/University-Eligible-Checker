@@ -196,9 +196,9 @@
       "math": 4.0,
       "english": 4.0,
       "biology": null
-   
+   },
     "hsc_total_gpa_required": 18
-}
+
   }
 },
 
@@ -220,8 +220,8 @@
       "chemistry": 4.0,
       "math": 4.0,
       "english": 3.0,
-      "biology": null
-    "hsc_total_gpa_required": 18 }
+      "biology": null },
+    "hsc_total_gpa_required": 18 
   }
 },
 
@@ -243,8 +243,8 @@
       "math": 4.0,
       "english": null,
       "biology": null
-   
-    "hsc_total_gpa_required": 18 }
+   },
+    "hsc_total_gpa_required": 18 
   }
 },
 
