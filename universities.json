@@ -1,5 +1,28 @@
 [
 {
+  "id": "mat",
+  "name": "Medical and Dental Admission",
+  "seat": "5000 (approx.)",
+  "criteria": {
+    "hsc_min_gpa": 4.0,
+    "ssc_min_gpa": 4.0,
+    "ssc_year_min": 2022,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2024,
+    "hsc_year_max": 2025,
+    "total_min_gpa": 8.5,
+    "subjects": {
+      "biology": 3.5,
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": null
+    }
+  }
+},
+
+
+{
   "id": "du",
   "name": "University of Dhaka (A Unit)",
   "seat": "1896",
@@ -129,6 +152,28 @@
       "math": 5.0,
       "english": null,
       "biology": null
+    }
+  }
+},
+
+{
+  "id": "cuet",
+  "name": "Chittagong University of Engineering and Technology (CUET)",
+  "seat": "920",
+  "criteria": {
+    "hsc_min_gpa": null,
+    "ssc_min_gpa": 4.0,
+    "ssc_year_min": 2022,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2025,
+    "hsc_year_max": 2025,
+    "total_min_gpa": null,
+    "subjects": {
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": 3.5,
+      "group_total": 14
     }
   }
 },
