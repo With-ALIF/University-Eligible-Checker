@@ -3,8 +3,8 @@
    - Only update universities.json; JS does not need changes.
    - Displays eligible universities in a colorful table.
    - SSC/HSC GPA validation included.
-   - Now supports: total GPA requirement (SSC + HSC ≥ total_min_gpa)
-   - Supports group_total (Physics+Chem+Math) and optional subject minima.
+   - Supports: total GPA requirement (SSC + HSC ≥ total_min_gpa)
+   - Supports group_total (Physics+Chem+Math) and HSC total GPA requirement.
 */
 
 (() => {
@@ -121,7 +121,7 @@
     const subMap = { physics: 'physics', chemistry: 'chemistry', math: 'math', english: 'eng', biology: 'bio' };
     if (c.subjects) {
       for (const sub in c.subjects) {
-        if (sub === 'group_total') continue; // skip group_total for now
+        if (sub === 'group_total') continue; // skip group_total
         const min = c.subjects[sub];
         if (min === null || min === undefined) continue;
         const val = toFloat(student[subMap[sub]]);
@@ -137,6 +137,15 @@
       const groupSum = student.physics + student.chemistry + student.math;
       if (groupSum < toFloat(c.subjects.group_total)) {
         console.log(`${uni.name}: Physics+Chem+Math sum too low`);
+        return false;
+      }
+    }
+
+    // HSC total GPA check
+    if (c.hsc_total_gpa_required) {
+      const hscTotal = student.physics + student.chemistry + student.math + student.bio + student.eng;
+      if (hscTotal < toFloat(c.hsc_total_gpa_required)) {
+        console.log(`${uni.name}: HSC total GPA too low`);
         return false;
       }
     }
