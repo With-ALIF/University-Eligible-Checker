@@ -21,7 +21,7 @@
 {
   "id": "mist",
   "name": "Military Institute of Science and Technology (MIST)",
-  "seat": around 570,
+  "seat": "around 570",
   "criteria": {
     "hsc_min_gpa": null,
     "hsc_year_min": 2024,
