@@ -250,7 +250,7 @@
 
   {
   "id": "butex",
-  "name": "Bangladesh University of Textiles",
+  "name": "* Bangladesh University of Textiles (BUTEX)",
   "seat": "640",
   "criteria": {
     "ssc_min_gpa": 4.0,
@@ -270,7 +270,7 @@
 
 {
   "id": "iut",
-  "name": "Islamic University of Technology",
+  "name": "* Islamic University of Technology (IUT)",
   "seat": "634",
   "criteria": {
     "ssc_min_gpa": 4.5,
@@ -313,7 +313,7 @@
 
 {
   "id": "ru_a",
-  "name": "* Rajshahi University - A Unit",
+  "name": "* Rajshahi University (RU) - A Unit",
   "seat": " NA",
   "criteria": {
     "ssc_min_gpa": 3.5,
@@ -334,7 +334,7 @@
 
 {
   "id": "ru_b",
-  "name": "* Rajshahi University - B Unit",
+  "name": "* Rajshahi University (RU) - B Unit",
   "seat": "166",
   "criteria": {
     "ssc_min_gpa": 3.5,
@@ -354,7 +354,7 @@
 
   {
   "id": "ru_c",
-  "name": "* Rajshahi University - C Unit",
+  "name": "* Rajshahi University (RU) - C Unit",
   "seat": "1470",
   "criteria": {
     "ssc_min_gpa": 3.5,
