@@ -115,7 +115,7 @@
 
 {
   "id": "butex",
-  "name": "* Bangladesh University of Textiles",
+  "name": "* Bangladesh University of Textiles (BUTEX)",
   "seat": "640",
   "criteria": {
     "ssc_min_gpa": 4.0,
@@ -135,7 +135,7 @@
 
 {
   "id": "iut",
-  "name": "* Islamic University of Technology",
+  "name": "* Islamic University of Technology (IUT)",
   "seat": "634",
   "criteria": {
     "ssc_min_gpa": 4.5,
