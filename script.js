@@ -1,3 +1,4 @@
+
 /* script.js
    University eligibility checker using JSON.
    - Only update universities.json; JS does not need changes except this for HSC total GPA
@@ -10,7 +11,21 @@
 
 (() => {
   // If you add more JSON files later, just add their paths to FILES_TO_LOAD
-  const FILES_TO_LOAD = ['./universities.json', './public.json'];
+
+   
+  const FILES_TO_LOAD = 
+  ['./data/medi.json',
+    './data/engineering.json',
+    './data/public.json', './data/ju.json', 
+    './data/cu.json', './data/jnu.json', './data/ku_Sust.json', 
+     '/data/gst.json' 
+  
+  
+  ];
+
+
+
+
   const FETCH_OPTIONS = { cache: "no-cache" };
 
   // DOM references
