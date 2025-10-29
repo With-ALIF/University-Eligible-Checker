@@ -2,7 +2,7 @@
     
 {
   "id": "dua",
-  "name": "University of Dhaka (A Unit)",
+  "name": "University of Dhaka (DU) A Unit",
   "seat": "1896",
   "criteria": {
     "hsc_min_gpa": 3.5,
@@ -25,7 +25,7 @@
 
 {
   "id": "dub",
-  "name": "University of Dhaka (B Unit)",
+  "name": "University of Dhaka (DU) B Unit",
   "seat": "944",
   "criteria": {
     "hsc_min_gpa": 3.5,
@@ -47,7 +47,7 @@
 
 {
   "id": "duc",
-  "name": "University of Dhaka (C Unit)",
+  "name": "University of Dhaka (DU) C Unit",
   "seat": "96",
   "criteria": {
     "hsc_min_gpa": 3.5,
@@ -69,7 +69,7 @@
 
 {
   "id": "duCha",
-  "name": "University of Dhaka (Cha Unit)",
+  "name": "University of Dhaka (DU) Cha Unit",
   "seat": "130",
   "criteria": {
     "hsc_min_gpa": 3.0,
@@ -92,7 +92,7 @@
 
 {
   "id": "duIba",
-  "name": "University of Dhaka (IBA)",
+  "name": "University of Dhaka (DU) IBA",
   "seat": "120",
   "criteria": {
     "hsc_min_gpa": 3.5,
@@ -116,7 +116,7 @@
 
 {
   "id": "ru_a",
-  "name": "* Rajshahi University - A Unit",
+  "name": "* Rajshahi University  (RU) A Unit",
   "seat": " NA",
   "criteria": {
     "ssc_min_gpa": 3.5,
@@ -137,7 +137,7 @@
 
 {
   "id": "ru_b",
-  "name": "* Rajshahi University - B Unit",
+  "name": "* Rajshahi University (RU) B Unit",
   "seat": "166",
   "criteria": {
     "ssc_min_gpa": 3.5,
@@ -157,7 +157,7 @@
 
   {
   "id": "ru_c",
-  "name": "* Rajshahi University - C Unit",
+  "name": "* Rajshahi University (RU) C Unit",
   "seat": "1470",
   "criteria": {
     "ssc_min_gpa": 3.5,
