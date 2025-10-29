@@ -1,0 +1,107 @@
+[
+  {
+    "id": "kua",
+    "name": "*Khulna University (KU) A Unit",
+    "seat": "319",
+    "criteria": {
+      "hsc_min_gpa": 4.0,
+      "ssc_min_gpa": 4.0,
+      "ssc_year_min": 2022,
+      "ssc_year_max": 2023,
+      "hsc_year_min": 2024,
+      "hsc_year_max": 2025,
+      "total_min_gpa": null
+    }
+  },
+
+  {
+    "id": "kub",
+    "name": "*Khulna University (KU) B Unit",
+    "seat": "281",
+    "criteria": {
+      "hsc_min_gpa": 3.5,
+      "ssc_min_gpa": 3.5,
+      "ssc_year_min": 2022,
+      "ssc_year_max": 2023,
+      "hsc_year_min": 2024,
+      "hsc_year_max": 2025,
+      "total_min_gpa": 8.0,
+      "subjects": {
+      "physics": 3.5,
+      "chemistry": 3.5,
+      "math": 3.5,
+      "english": 3.0,
+      "biology": 3.5
+    }
+    }
+  },
+
+ {
+  "id": "kuc",
+  "name": "*Khulna University (KU) C Unit",
+  "seat": "415",
+  "criteria": {
+    "hsc_min_gpa": null,
+    "ssc_min_gpa": null,
+    "ssc_year_min": 2022,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2024,
+    "hsc_year_max": 2025,
+    "total_min_gpa": 7.5
+  }
+},
+
+
+  {
+    "id": "kud",
+    "name": "*Khulna University (KU) D Unit",
+    "seat": "88",
+    "criteria": {
+      "hsc_min_gpa": 4.00,
+      "ssc_min_gpa": 4.00,
+      "ssc_year_min": 2022,
+      "ssc_year_max": 2023,
+      "hsc_year_min": 2024,
+      "hsc_year_max": 2025,
+      "subjects": {
+      "english": 3.5       
+    }
+      
+    }
+  },
+
+  {
+    "id": "susta",
+    "name": "*Shahjalal University of Science and Technology (SUST) A Unit",
+    "seat": "985",
+    "criteria": {
+      "hsc_min_gpa": 3.00,
+      "ssc_min_gpa": 3.00,
+      "ssc_year_min": 2022,
+      "ssc_year_max": 2023,
+      "hsc_year_min": 2024,
+      "hsc_year_max": 2025,
+      "total_min_gpa": 7.0,
+      "subjects": {
+      "math": 3.5       
+    }
+    }
+  },
+
+  {
+    "id": "sustb",
+    "name": "*Shahjalal University of Science and Technology (SUST) B Unit",
+    "seat": "210",
+    "criteria": {
+      "hsc_min_gpa": 3.00,
+      "ssc_min_gpa": 3.00,
+      "ssc_year_min": 2022,
+      "ssc_year_max": 2023,
+      "hsc_year_min": 2024,
+      "hsc_year_max": 2025,
+      "total_min_gpa": 6.5
+    }
+  }
+
+  
+]
