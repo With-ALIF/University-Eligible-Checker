@@ -1,1 +1,62 @@
-.
+[
+    {
+    "id": "hstu_a",
+    "name": "* Hajee Mohammad Danesh Science and Technology University (HSTU) - A Unit",
+    "seat": 535,
+    "criteria": {
+      "hsc_min_gpa": 3.5,
+      "ssc_min_gpa": 3.5,
+      "ssc_year_min": 2022,
+      "ssc_year_max": 2024,
+      "hsc_year_min": 2024,
+      "hsc_year_max": 2025,
+      "total_min_gpa": 8.0
+    }
+  },
+
+   {
+    "id": "hstu_b",
+    "name": "* Hajee Mohammad Danesh Science and Technology University (HSTU) - B Unit",
+    "seat": 740,
+    "criteria": {
+      "hsc_min_gpa": 3.5,
+      "ssc_min_gpa": 3.5,
+      "ssc_year_min": 2022,
+      "ssc_year_max": 2024,
+      "hsc_year_min": 2024,
+      "hsc_year_max": 2025,
+      "total_min_gpa": 8.0
+    }
+  },
+
+
+  {
+    "id": "hstu_c",
+    "name": "* Hajee Mohammad Danesh Science and Technology University (HSTU) - C Unit",
+    "seat": 112,
+    "criteria": {
+      "hsc_min_gpa": 3.0,
+      "ssc_min_gpa": 3.0,
+      "ssc_year_min": 2022,
+      "ssc_year_max": 2024,
+      "hsc_year_min": 2024,
+      "hsc_year_max": 2025,
+      "total_min_gpa": 6.5
+    }
+  },
+
+   {
+    "id": "hstu_d",
+    "name": "* Hajee Mohammad Danesh Science and Technology University (HSTU) - D Unit",
+    "seat": 96,
+    "criteria": {
+      "hsc_min_gpa": 3.0,
+      "ssc_min_gpa": 3.0,
+      "ssc_year_min": 2022,
+      "ssc_year_max": 2024,
+      "hsc_year_min": 2024,
+      "hsc_year_max": 2025,
+      "total_min_gpa": 6.5
+    }
+  }
+]
