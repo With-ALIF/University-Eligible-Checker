@@ -389,3 +389,15 @@ a:hover {
   box-shadow: 0 2px 4px
   rgba(74, 144, 226, 0.3);
 }
+
+
+
+
+  .highlight {
+ color: red; 
+}  			 /* নামের আগে * থাকলে লাল */
+
+
+  .normal { 
+color: black;
+ }   		 /* অন্যথায় কালো */
