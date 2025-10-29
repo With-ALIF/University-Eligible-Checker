@@ -3,7 +3,7 @@
   if (!newsEl) return;
 
   // Fallback text
-  const fallback = "📢 '*' চিন্হিত বিশ্ববিদ্যালয় সমূহের তথ্য বিগত ২০২৪-২০২৫ সেশনের ভর্তি বিজ্ঞপ্তি বা সার্কুলার হতে সংগ্রহীত। 📢 Information about the universities marked with '*' has been collected from the admission notices or circulars of the 2024-2025 session.";
+  const fallback = "📢 লাল রঙ্গে চিন্হিত বিশ্ববিদ্যালয় সমূহের তথ্য বিগত ২০২৪-২০২৫ সেশনের ভর্তি বিজ্ঞপ্তি বা সার্কুলার হতে সংগ্রহীত। 📢 Information about the universities marked with red coloured has been collected from the admission notices or circulars of the 2024-2025 session.";
   
   // Show fallback immediately
   newsEl.textContent = fallback;
