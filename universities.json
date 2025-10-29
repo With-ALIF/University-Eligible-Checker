@@ -23,8 +23,8 @@
 
 
 {
-  "id": "du",
-  "name": "University of Dhaka (A Unit)",
+  "id": "dua",
+  "name": "University of Dhaka (DU A Unit)",
   "seat": "1891",
   "criteria": {
     "hsc_min_gpa": 3.5,
@@ -47,8 +47,8 @@
 
 {
   "id": "dub",
-  "name": "University of Dhaka (B Unit)",
-  "seat": "944",
+  "name": "University of Dhaka (DU B Unit)",
+  "seat": "962",
   "criteria": {
     "hsc_min_gpa": 3.5,
     "ssc_min_gpa": 3.5,
@@ -69,8 +69,8 @@
 
 {
   "id": "duc",
-  "name": "University of Dhaka (C Unit)",
-  "seat": "96",
+  "name": "University of Dhaka (DU C Unit)",
+  "seat": "95",
   "criteria": {
     "hsc_min_gpa": 3.5,
     "ssc_min_gpa": 3.5,
@@ -91,7 +91,7 @@
 
 {
   "id": "duCha",
-  "name": "University of Dhaka (Cha Unit)",
+  "name": "University of Dhaka (DU Cha Unit)",
   "seat": "130",
   "criteria": {
     "hsc_min_gpa": 3.0,
@@ -114,7 +114,7 @@
 
 {
   "id": "duIba",
-  "name": "University of Dhaka (IBA)",
+  "name": "University of Dhaka (DU IBA)",
   "seat": "120",
   "criteria": {
     "hsc_min_gpa": 3.5,
