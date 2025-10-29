@@ -158,7 +158,7 @@
 
 {
   "id": "cuet",
-  "name": "Chittagong University of Engineering and Technology (CUET)",
+  "name": "* Chittagong University of Engineering and Technology (CUET)",
   "seat": "920",
   "criteria": {
     "hsc_min_gpa": null,
@@ -180,7 +180,7 @@
 
 {
   "id": "ruet",
-  "name": "Rajshahi University of Engineering and Technology (RUET)",
+  "name": "* Rajshahi University of Engineering and Technology (RUET)",
   "seat": "1235",
   "criteria": {
     "hsc_min_gpa": null,
@@ -205,7 +205,7 @@
 
 {
   "id": "kuet",
-  "name": "Khulna University of Engineering and Technology (KUET)",
+  "name": "* Khulna University of Engineering and Technology (KUET)",
   "seat": "1060",
   "criteria": {
     "hsc_min_gpa": null,
@@ -250,7 +250,7 @@
 
 {
   "id": "agri",
-  "name": "Cluster Agri",
+  "name": "* Cluster Agri",
   "seat": 3863,
   "criteria": {
     "ssc_min_gpa": 4.0,
@@ -273,7 +273,7 @@
 
 {
   "id": "ru_a",
-  "name": "Rajshahi University - A Unit",
+  "name": "* Rajshahi University - A Unit",
   "seat": " NA",
   "criteria": {
     "ssc_min_gpa": 3.5,
@@ -294,7 +294,7 @@
 
 {
   "id": "ru_b",
-  "name": "Rajshahi University - B Unit",
+  "name": "* Rajshahi University - B Unit",
   "seat": "166",
   "criteria": {
     "ssc_min_gpa": 3.5,
@@ -314,7 +314,7 @@
 
   {
   "id": "ru_c",
-  "name": "Rajshahi University - C Unit",
+  "name": "* Rajshahi University - C Unit",
   "seat": "1470",
   "criteria": {
     "ssc_min_gpa": 3.5,
