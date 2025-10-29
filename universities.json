@@ -248,6 +248,46 @@
   }
 },
 
+  {
+  "id": "butex",
+  "name": "Bangladesh University of Textiles",
+  "seat": "640",
+  "criteria": {
+    "ssc_min_gpa": 4.0,
+    "ssc_year_min": null,
+    "hsc_min_gpa": null,
+    "hsc_year_min": 2025,
+    "hsc_total_gpa_required": 18.5,
+    "subjects": {
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": null,
+      "biology": null
+    }
+  }
+},
+
+{
+  "id": "iut",
+  "name": "Islamic University of Technology",
+  "seat": "634",
+  "criteria": {
+    "ssc_min_gpa": 4.5,
+    "ssc_year_min": 2021,
+    "hsc_min_gpa": 4.5,
+    "hsc_year_min": 2024,
+    "hsc_year_max": 2025,
+    "subjects": {
+      "physics": 5.0,
+      "chemistry": 5.0,
+      "math": 5.0,
+      "english": 4.0,
+      "biology": null
+    }
+  }
+},
+
 {
   "id": "agri",
   "name": "* Cluster Agri",
