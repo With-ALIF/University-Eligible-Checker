@@ -34,15 +34,14 @@
             <div class="field">
               <label for="ssc">SSC Year</label>
 <select id="ssc" name="ssc" aria-label="SSC Year">
-  <option value="2017">2017</option>
-  <option value="2018">2018</option>
+ 
   <option value="2019">2019</option>
   <option value="2020">2020</option>
   <option value="2021">2021</option>
   <option value="2022">2022</option>
   <option value="2023" selected>2023</option>
   <option value="2024">2024</option>
-  <option value="2025">2025</option>
+  
 </select>
             </div>
 
@@ -57,10 +56,6 @@
             <div class="field">
               <label for="hsc">HSC Year</label>
 <select id="hsc" name="hsc" aria-label="HSC Year">
-  <option value="2018">2018</option>
-  <option value="2019">2019</option>
-  <option value="2020">2020</option>
-  <option value="2021">2021</option>
   <option value="2022">2022</option>
   <option value="2023">2023</option>
   <option value="2024">2024</option>
@@ -76,7 +71,7 @@
 
           <hr class="divider" />
 
-          <h4 class="subheading" id="subject-wise-heading">Subject Wise Point</h4>
+          <h4 class="subheading" id="subject-wise-heading">Subject Wise Grade Point</h4>
 
           <!-- Physics + Chemistry row -->
           <div class="row">
@@ -166,6 +161,9 @@
 
         <!-- Matching universities -->
         <div id="circularsWrap" style="display:none">
+          <input type="text" id="searchUni" placeholder="Search by University full name...." 
+          class="search-bar" >
+
           <table id="circulars" class="results-table" aria-live="polite">
             <thead>
               <tr>
