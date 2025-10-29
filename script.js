@@ -7,8 +7,11 @@
    - Supports group_total (Physics+Chem+Math) and HSC total GPA requirement.
 */
 
+
 (() => {
-  const JSON_PATH = './universities.json';
+  // If you add more JSON files later, just add their paths to FILES_TO_LOAD
+  const FILES_TO_LOAD = ['./universities.json', './public.json'];
+  const FETCH_OPTIONS = { cache: "no-cache" };
 
   // DOM references
   const sscEl = document.getElementById('ssc');
@@ -26,22 +29,45 @@
   const resetBtn = document.getElementById('resetBtn');
   const circularsWrap = document.getElementById('circularsWrap');
   const circularsTbody = document.querySelector('#circulars tbody');
+  const searchInput = document.getElementById('searchUni');
 
   let universities = [];
 
+  // -- Load multiple JSON files and merge arrays.
   async function loadUniversities() {
     try {
-      const res = await fetch(JSON_PATH, { cache: "no-cache" });
-      if (!res.ok) throw new Error(`Failed to load ${JSON_PATH}: ${res.status}`);
-      universities = await res.json();
-      if (!Array.isArray(universities)) universities = [];
-      console.log("Universities loaded:", universities);
+      let all = [];
+
+      for (const file of FILES_TO_LOAD) {
+        try {
+          const res = await fetch(file, FETCH_OPTIONS);
+          if (!res.ok) {
+            // If file missing (404) or blocked, skip but log info
+            console.warn(`Skipped loading ${file}: ${res.status} ${res.statusText}`);
+            continue;
+          }
+          const data = await res.json();
+          if (Array.isArray(data)) {
+            all = all.concat(data);
+            console.log(`Loaded ${data.length} items from ${file}`);
+          } else {
+            console.warn(`${file} did not contain an array; skipping.`);
+          }
+        } catch (err) {
+          // network/parse error for this file — skip and continue
+          console.error(`Error loading ${file}:`, err);
+        }
+      }
+
+      universities = all;
+      console.log("All universities loaded (merged):", universities);
     } catch (err) {
-      console.error(err);
+      console.error('Failed to load universities:', err);
       universities = [];
     }
   }
 
+  // --- Utility helpers (unchanged logic) ---
   function toFloat(v) {
     const n = parseFloat(v);
     return isNaN(n) ? 0 : n;
@@ -153,6 +179,7 @@
     return true;
   }
 
+  // --- Render results (unchanged, keeps your highlight logic) ---
   function renderResults(matches) {
     circularsTbody.innerHTML = '';
     if (matches.length > 0) {
@@ -160,13 +187,11 @@
       matches.forEach((u, index) => {
         const tr = document.createElement('tr');
 
-        // --- নতুন যুক্তকৃত লাইন (শুধু নাম হাইলাইট করার জন্য) --- //
-        // নাম থেকে * থাকলে সেটা সরানো এবং উপযুক্ত CSS ক্লাস নির্ধারণ
+        // remove leading '*' from name for display and set class
         let displayName = u.name && typeof u.name === 'string' && u.name.startsWith('*')
           ? u.name.slice(1).trim()
           : (u.name || '');
         let nameClass = (u.name && typeof u.name === 'string' && u.name.startsWith('*')) ? 'highlight' : 'normal';
-        // ------------------------------------------------------- //
 
         tr.innerHTML = `
           <td>${index + 1}</td>
@@ -181,21 +206,19 @@
     }
   }
 
-  const searchInput = document.getElementById('searchUni');
-
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
-    const rows = circularsTbody.querySelectorAll('tr');
-    rows.forEach(row => {
-      const uniName = row.children[1].textContent.toLowerCase();
-
-      row.style.display = uniName.includes(query) ? '' : 'none';
+  // --- Search within rendered rows ---
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      const rows = circularsTbody.querySelectorAll('tr');
+      rows.forEach(row => {
+        const uniName = row.children[1].textContent.toLowerCase();
+        row.style.display = uniName.includes(query) ? '' : 'none';
+      });
     });
-  });
+  }
 
-
-
-
+  // --- Main actions ---
   function runCheck() {
     if (!universities.length) {
       alert('University data not loaded yet.');
@@ -213,15 +236,17 @@
   }
 
   function runReset() {
-    document.getElementById('studentForm').reset();
+    const form = document.getElementById('studentForm');
+    if (form) form.reset();
     circularsWrap.style.display = 'none';
     circularsTbody.innerHTML = '';
   }
 
+  // --- Init ---
   (async function init() {
     await loadUniversities();
-    checkBtn.addEventListener('click', runCheck);
-    resetBtn.addEventListener('click', runReset);
+    if (checkBtn) checkBtn.addEventListener('click', runCheck);
+    if (resetBtn) resetBtn.addEventListener('click', runReset);
   })();
 
 })();
