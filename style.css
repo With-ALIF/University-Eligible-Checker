@@ -15,6 +15,126 @@ body {
   min-height: 100vh;
 }
 
+
+
+.news-ticker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #e5e8ef;  
+  color: rgb(201, 198, 198);
+  padding: 8px 14px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;            
+  line-height: 40px;
+  z-index: 1100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  border-bottom: 5px solid rgba(10, 10, 10, 0.04);
+}
+
+
+.ticker-title {
+  background: #d32f2f;  
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+  display: inline-block;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+ 
+.marquee {
+  flex: 1 1 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+ 
+#news-text {
+  display: inline-block;
+  white-space: nowrap;
+  color: #ff2e2e;       
+  font-size: 15px;
+  font-weight: 700;
+  transform: translateX(100%);  
+  will-change: transform;
+ 
+  animation-name: scrollText;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+ 
+@keyframes scrollText {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(-100%); }
+}
+
+ 
+.news-ticker:hover #news-text {
+  animation-play-state: paused;
+}
+
+ @media (max-width: 600px) {
+  #news-text { 
+    font-size: 13px; 
+  }
+  
+  .ticker-title { 
+    padding: 5px 8px; 
+    font-size: 14px; 
+  }
+  body { 
+    padding-top: 60px; 
+  } 
+}
+
+
+ 
+.site-header { 
+  display:flex; 
+  align-items:center; 
+  padding:1rem 2rem; 
+  background-color:#2C4B9B; 
+  color:white; 
+  border-radius:0 0 12px 12px; 
+  margin-bottom:1.5rem;
+ }
+
+.site-header .logo { 
+  font-size:1.8rem; 
+  font-weight:700; 
+  background:white; 
+  color:#2C4B9B; 
+  padding:0.5rem 1rem; 
+  border-radius:8px; 
+  margin-right:1rem; 
+}
+
+.grid { 
+  display:grid; 
+  grid-template-columns:1fr 1fr; 
+  gap:2rem; 
+  padding:0 2rem 4rem; 
+}
+@media (max-width:900px){ 
+  .grid{ grid-template-columns:1fr; 
+    padding:0 1rem 2rem; } 
+  }
+.card{ 
+  background:white; 
+  border-radius:12px; 
+  padding:1.8rem 2rem; 
+  box-shadow:0 4px 20px rgba(0,0,0,0.08); 
+}
+ 
+
 h1 {
   font-weight: 800;
   color: #fff;
