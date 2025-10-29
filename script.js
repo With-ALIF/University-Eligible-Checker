@@ -17,7 +17,8 @@
   ['./data/medi.json',
     './data/engineering.json',
     './data/public.json', './data/ju.json', 
-    './data/cu.json', './data/jnu.json', './data/ku_Sust.json', 
+    './data/cu.json', './data/jnu.json', './data/ku_Sust.json',
+   './data/hstu.json'
      '/data/gst.json' 
   
   
