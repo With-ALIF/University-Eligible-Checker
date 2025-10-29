@@ -159,9 +159,18 @@
       circularsWrap.style.display = 'block';
       matches.forEach((u, index) => {
         const tr = document.createElement('tr');
+
+        // --- নতুন যুক্তকৃত লাইন (শুধু নাম হাইলাইট করার জন্য) --- //
+        // নাম থেকে * থাকলে সেটা সরানো এবং উপযুক্ত CSS ক্লাস নির্ধারণ
+        let displayName = u.name && typeof u.name === 'string' && u.name.startsWith('*')
+          ? u.name.slice(1).trim()
+          : (u.name || '');
+        let nameClass = (u.name && typeof u.name === 'string' && u.name.startsWith('*')) ? 'highlight' : 'normal';
+        // ------------------------------------------------------- //
+
         tr.innerHTML = `
           <td>${index + 1}</td>
-          <td>${u.name} ${u.short ? `(${u.short})` : ''}</td>
+          <td class="${nameClass}">${displayName} ${u.short ? `(${u.short})` : ''}</td>
           <td>${u.seat || '-'}</td>
         `;
         circularsTbody.appendChild(tr);
