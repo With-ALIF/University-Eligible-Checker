@@ -1,0 +1,156 @@
+[
+    
+  {
+  "id": "buet",
+  "name": "Bangladesh University of Engineering and Technology (BUET)",
+  "seat": "1305",
+  "criteria": {
+    "hsc_min_gpa": 5.0,
+    "ssc_min_gpa": 4.0,
+    "ssc_year_min": 2022,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2025,
+    "hsc_year_max": 2025,
+    "subjects": {
+      "physics": 5.0,
+      "chemistry": 5.0,
+      "math": 5.0,
+      "english": null,
+      "biology": null
+    }
+  }
+},
+
+{
+  "id": "cuet",
+  "name": "* Chittagong University of Engineering and Technology (CUET)",
+  "seat": "920",
+  "criteria": {
+    "hsc_min_gpa": null,
+    "ssc_min_gpa": 4.0,
+    "ssc_year_min": 2022,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2025,
+    "hsc_year_max": 2025,
+    "total_min_gpa": null,
+    "subjects": {
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": 3.5,
+      "group_total": 14
+    }
+  }
+},
+
+{
+  "id": "ruet",
+  "name": "* Rajshahi University of Engineering and Technology (RUET)",
+  "seat": "1235",
+  "criteria": {
+    "hsc_min_gpa": null,
+    "ssc_min_gpa": 4.0,
+    "ssc_year_min": 2022,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2025,
+    "hsc_year_max": 2025,
+    "total_min_gpa": null,
+    "subjects": {
+      "physics": 4.0,
+      "chemistry": 4.0,
+      "math": 4.0,
+      "english": 4.0,
+      "biology": null
+   },
+    "hsc_total_gpa_required": 18
+
+  }
+},
+
+
+{
+  "id": "kuet",
+  "name": "* Khulna University of Engineering and Technology (KUET)",
+  "seat": "1060",
+  "criteria": {
+    "hsc_min_gpa": null,
+    "ssc_min_gpa": 4.0,
+    "ssc_year_min": 2022,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2025,
+    "hsc_year_max": 2025,
+    "total_min_gpa": null,
+    "subjects": {
+      "physics": 4.0,
+      "chemistry": 4.0,
+      "math": 4.0,
+      "english": 3.0,
+      "biology": null },
+    "hsc_total_gpa_required": 18 
+  }
+},
+
+{
+  "id": "mist",
+  "name": "Military Institute of Science and Technology (MIST)",
+  "seat": "570 (approx.)",
+  "criteria": {
+"hsc_min_gpa": null,
+    "ssc_min_gpa": 4.0,
+    "ssc_year_min": 2022,
+    "ssc_year_max": 2023,
+    "hsc_year_min": 2024,
+    "hsc_year_max": 2025,
+    "total_min_gpa": null,
+    "subjects": {
+      "physics": 4.0,
+      "chemistry": 4.0,
+      "math": 4.0,
+      "english": null,
+      "biology": null
+   },
+    "hsc_total_gpa_required": 18 
+  }
+},
+
+{
+  "id": "butex",
+  "name": "* Bangladesh University of Textiles",
+  "seat": "640",
+  "criteria": {
+    "ssc_min_gpa": 4.0,
+    "ssc_year_min": null,
+    "hsc_min_gpa": null,
+    "hsc_year_min": 2025,
+    "hsc_total_gpa_required": 18.5,
+    "subjects": {
+      "physics": null,
+      "chemistry": null,
+      "math": null,
+      "english": null,
+      "biology": null
+    }
+  }
+},
+
+{
+  "id": "iut",
+  "name": "* Islamic University of Technology",
+  "seat": "634",
+  "criteria": {
+    "ssc_min_gpa": 4.5,
+    "ssc_year_min": 2021,
+    "hsc_min_gpa": 4.5,
+    "hsc_year_min": 2024,
+    "hsc_year_max": 2025,
+    "subjects": {
+      "physics": 5.0,
+      "chemistry": 5.0,
+      "math": 5.0,
+      "english": 4.0,
+      "biology": null
+    }
+  }
+}
+
+]
