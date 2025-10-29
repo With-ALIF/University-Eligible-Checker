@@ -172,6 +172,21 @@
     }
   }
 
+  const searchInput = document.getElementById('searchUni');
+
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    const rows = circularsTbody.querySelectorAll('tr');
+    rows.forEach(row => {
+      const uniName = row.children[1].textContent.toLowerCase();
+
+      row.style.display = uniName.includes(query) ? '' : 'none';
+    });
+  });
+
+
+
+
   function runCheck() {
     if (!universities.length) {
       alert('University data not loaded yet.');
