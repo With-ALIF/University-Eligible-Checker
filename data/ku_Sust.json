@@ -1,44 +1,44 @@
 [
   {
     "id": "kua",
-    "name": "*Khulna University (KU) A Unit",
-    "seat": "319",
+    "name": "Khulna University (KU) A Unit",
+    "seat": "320",
     "criteria": {
-      "hsc_min_gpa": 4.0,
-      "ssc_min_gpa": 4.0,
+      "hsc_min_gpa": null,
+      "ssc_min_gpa": null,
       "ssc_year_min": 2022,
       "ssc_year_max": 2023,
       "hsc_year_min": 2024,
       "hsc_year_max": 2025,
-      "total_min_gpa": null
+      "total_min_gpa": 8.0
     }
   },
 
   {
     "id": "kub",
-    "name": "*Khulna University (KU) B Unit",
+    "name": "Khulna University (KU) B Unit",
     "seat": "281",
     "criteria": {
-      "hsc_min_gpa": 3.5,
-      "ssc_min_gpa": 3.5,
+      "hsc_min_gpa": null,
+      "ssc_min_gpa": null,
       "ssc_year_min": 2022,
       "ssc_year_max": 2023,
       "hsc_year_min": 2024,
       "hsc_year_max": 2025,
       "total_min_gpa": 8.0,
       "subjects": {
-      "physics": 3.5,
-      "chemistry": 3.5,
-      "math": 3.5,
+      "physics": 3.0,
+      "chemistry": 3.0,
+      "math": 3.0,
       "english": 3.0,
-      "biology": 3.5
+      "biology": 3.0
     }
     }
   },
 
  {
   "id": "kuc",
-  "name": "*Khulna University (KU) C Unit",
+  "name": "Khulna University (KU) C Unit",
   "seat": "415",
   "criteria": {
     "hsc_min_gpa": null,
@@ -47,18 +47,18 @@
     "ssc_year_max": 2023,
     "hsc_year_min": 2024,
     "hsc_year_max": 2025,
-    "total_min_gpa": 7.5
+    "total_min_gpa": 7.0
   }
 },
 
 
   {
     "id": "kud",
-    "name": "*Khulna University (KU) D Unit",
+    "name": "Khulna University (KU) D Unit",
     "seat": "88",
     "criteria": {
-      "hsc_min_gpa": 4.00,
-      "ssc_min_gpa": 4.00,
+      "hsc_min_gpa": 3.50,
+      "ssc_min_gpa": 3.50,
       "ssc_year_min": 2022,
       "ssc_year_max": 2023,
       "hsc_year_min": 2024,
