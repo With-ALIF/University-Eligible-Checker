@@ -401,3 +401,26 @@ a:hover {
   .normal { 
 color: black;
  }   		 /* অন্যথায় কালো */
+
+
+ /* section header style */
+#circulars tbody tr.section-header td {
+  background: linear-gradient(90deg, rgba(0,0,0,0.05), rgba(0,0,0,0.02));
+  font-weight: 700;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  border-top: 2px solid #eee;
+}
+
+/* existing highlight class you used */
+.highlight { 
+  color: green;
+ text-align: center;
+}
+
+.normal { 
+   color: #222; 
+}
+
