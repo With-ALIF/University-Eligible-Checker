@@ -11,6 +11,8 @@
 
 (() => {
   // If you add more JSON files later, just add their paths to FILES_TO_LOAD
+
+
 const FILES_TO_LOAD = [
   { path: './data/medi.json', category: 'Medical' },
   { path: './data/engineering.json', category: 'Engineering' },
@@ -19,9 +21,9 @@ const FILES_TO_LOAD = [
   { path: './data/cu.json', category: 'University' },
   { path: './data/jnu.json', category: 'University' },
   { path: './data/ku_Sust.json', category: 'University' },
-
-
-   ]
+  { path: './data/hstu.json', category: 'University' },
+  { path: './data/gst.json', category: 'University' }
+];
 
 
 
