@@ -403,24 +403,35 @@ color: black;
  }   		 /* অন্যথায় কালো */
 
 
- #circulars tbody tr.section-header td {
+#circulars tbody tr.section-header td {
+
   background: linear-gradient(90deg, rgba(0, 102, 255, 0.15), rgba(0, 204, 255, 0.08));
+
   font-weight: 700;
-  padding: 10px;
+  padding: 12px 20px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  border-top: 2px solid #eee;
-  transition: background 0.3s ease, color 0.3s ease;
+  border: none;
+  border-radius: 999px; /* ক্যাপসুল শেপ */
+  margin: 6px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 /* Hover effect */
+
 #circulars tbody tr.section-header:hover td {
   background: linear-gradient(90deg, rgba(0, 102, 255, 0.35), rgba(0, 204, 255, 0.25));
+
   color: #004aad;
+  box-shadow: 0 4px 10px rgba(0, 102, 255, 0.25);
+  transform: scale(1.01);
 }
 
+
 /* existing highlight class */
+
 .highlight { 
   color: green;
   text-align: center;
