@@ -403,24 +403,30 @@ color: black;
  }   		 /* অন্যথায় কালো */
 
 
- /* section header style */
-#circulars tbody tr.section-header td {
-  background: linear-gradient(90deg, rgba(0,0,0,0.05), rgba(0,0,0,0.02));
+ #circulars tbody tr.section-header td {
+  background: linear-gradient(90deg, rgba(0, 102, 255, 0.15), rgba(0, 204, 255, 0.08));
   font-weight: 700;
   padding: 10px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.6px;
   border-top: 2px solid #eee;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* existing highlight class you used */
+/* Hover effect */
+#circulars tbody tr.section-header:hover td {
+  background: linear-gradient(90deg, rgba(0, 102, 255, 0.35), rgba(0, 204, 255, 0.25));
+  color: #004aad;
+}
+
+/* existing highlight class */
 .highlight { 
   color: green;
- text-align: center;
+  text-align: center;
 }
 
+/* normal text style */
 .normal { 
-   color: #222; 
+  color: #222; 
 }
-
