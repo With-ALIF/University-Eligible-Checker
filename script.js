@@ -11,18 +11,17 @@
 
 (() => {
   // If you add more JSON files later, just add their paths to FILES_TO_LOAD
+const FILES_TO_LOAD = [
+  { path: './data/medi.json', category: 'Medical' },
+  { path: './data/engineering.json', category: 'Engineering' },
+  { path: './data/public.json', category: 'University' },
+  { path: './data/ju.json', category: 'University' },
+  { path: './data/cu.json', category: 'University' },
+  { path: './data/jnu.json', category: 'University' },
+  { path: './data/ku_Sust.json', category: 'University' },
 
-   
-  const FILES_TO_LOAD = 
-  ['./data/medi.json',
-    './data/engineering.json',
-    './data/public.json', './data/ju.json', 
-    './data/cu.json', './data/jnu.json', './data/ku_Sust.json',
-   './data/hstu.json',
-     '/data/gst.json' 
-  
-  
-  ];
+
+   ]
 
 
 
@@ -50,38 +49,47 @@
   let universities = [];
 
   // -- Load multiple JSON files and merge arrays.
-  async function loadUniversities() {
-    try {
-      let all = [];
+ async function loadUniversities() {
+  try {
+    let all = [];
 
-      for (const file of FILES_TO_LOAD) {
-        try {
-          const res = await fetch(file, FETCH_OPTIONS);
-          if (!res.ok) {
-            // If file missing (404) or blocked, skip but log info
-            console.warn(`Skipped loading ${file}: ${res.status} ${res.statusText}`);
-            continue;
-          }
-          const data = await res.json();
-          if (Array.isArray(data)) {
-            all = all.concat(data);
-            console.log(`Loaded ${data.length} items from ${file}`);
-          } else {
-            console.warn(`${file} did not contain an array; skipping.`);
-          }
-        } catch (err) {
-          // network/parse error for this file — skip and continue
-          console.error(`Error loading ${file}:`, err);
+    for (const fileEntry of FILES_TO_LOAD) {
+      // support both string entries and object entries
+      const path = (typeof fileEntry === 'string') ? fileEntry : fileEntry.path;
+      const category = (typeof fileEntry === 'object' && fileEntry.category) ? fileEntry.category : null;
+
+      try {
+        const res = await fetch(path, FETCH_OPTIONS);
+        if (!res.ok) {
+          console.warn(`Skipped loading ${path}: ${res.status} ${res.statusText}`);
+          continue;
         }
+        const data = await res.json();
+        if (Array.isArray(data)) {
+          // tag category if provided and not already present
+          if (category) {
+            data.forEach(item => {
+              if (!item.category) item.category = category;
+            });
+          }
+          all = all.concat(data);
+          console.log(`Loaded ${data.length} items from ${path}`);
+        } else {
+          console.warn(`${path} did not contain an array; skipping.`);
+        }
+      } catch (err) {
+        console.error(`Error loading ${path}:`, err);
       }
-
-      universities = all;
-      console.log("All universities loaded (merged):", universities);
-    } catch (err) {
-      console.error('Failed to load universities:', err);
-      universities = [];
     }
+
+    universities = all;
+    console.log("All universities loaded (merged):", universities);
+  } catch (err) {
+    console.error('Failed to load universities:', err);
+    universities = [];
   }
+}
+
 
   // --- Utility helpers (unchanged logic) ---
   function toFloat(v) {
@@ -196,31 +204,60 @@
   }
 
   // --- Render results (unchanged, keeps your highlight logic) ---
-  function renderResults(matches) {
-    circularsTbody.innerHTML = '';
-    if (matches.length > 0) {
-      circularsWrap.style.display = 'block';
-      matches.forEach((u, index) => {
+ function renderResults(matches) {
+  circularsTbody.innerHTML = '';
+  if (matches.length > 0) {
+    circularsWrap.style.display = 'block';
+
+    // Group by category (keep order: Engineering, Medical, Public, Other if you want)
+    const orderedCategories = ['Engineering', 'Medical', 'Public'];
+    const groups = {};
+
+    matches.forEach(u => {
+      const cat = u.category || 'Other';
+      if (!groups[cat]) groups[cat] = [];
+      groups[cat].push(u);
+    });
+
+    // ensure predictable order: first orderedCategories, then remaining keys
+    const remaining = Object.keys(groups).filter(k => !orderedCategories.includes(k)).sort();
+    const finalOrder = orderedCategories.filter(k => groups[k]).concat(remaining);
+
+    let globalIndex = 0;
+    for (const cat of finalOrder) {
+      const items = groups[cat];
+      if (!items || !items.length) continue;
+
+      // add a section header row
+      const headerTr = document.createElement('tr');
+      headerTr.className = 'section-header';
+      headerTr.innerHTML = `<td colspan="3">${cat}</td>`;
+      circularsTbody.appendChild(headerTr);
+
+      items.forEach((u) => {
+        globalIndex++;
         const tr = document.createElement('tr');
 
-        // remove leading '*' from name for display and set class
         let displayName = u.name && typeof u.name === 'string' && u.name.startsWith('*')
           ? u.name.slice(1).trim()
           : (u.name || '');
         let nameClass = (u.name && typeof u.name === 'string' && u.name.startsWith('*')) ? 'highlight' : 'normal';
 
         tr.innerHTML = `
-          <td>${index + 1}</td>
+          <td>${globalIndex}</td>
           <td class="${nameClass}">${displayName} ${u.short ? `(${u.short})` : ''}</td>
           <td>${u.seat || '-'}</td>
         `;
         circularsTbody.appendChild(tr);
       });
-    } else {
-      circularsWrap.style.display = 'none';
-      alert("No eligible universities found.");
     }
+
+  } else {
+    circularsWrap.style.display = 'none';
+    alert("No eligible universities found.");
   }
+}
+
 
   // --- Search within rendered rows ---
   if (searchInput) {
