@@ -4,7 +4,7 @@
 
   // Fallback text
 
-const fallback = "📢 লাল চিহ্নিত বিশ্ববিদ্যালয়গুলোর তথ্য ২০২৪-২০২৫ শিক্ষাবর্ষের ভর্তি বিজ্ঞপ্তি বা সার্কুলার থেকে সংগৃহীত। 📢 Information of the universities marked in red has been collected from the official admission notices or circulars of the 2024-2025 academic session.";  
+const fallback = "📢 সবুজ চিহ্নিত বিশ্ববিদ্যালয়গুলোর তথ্য ২০২৪-২০২৫ শিক্ষাবর্ষের ভর্তি বিজ্ঞপ্তি বা সার্কুলার থেকে সংগৃহীত। 📢 Information of the universities marked in green has been collected from the official admission notices or circulars of the 2024-2025 academic session.";  
   // Show fallback immediately
   newsEl.textContent = fallback;
 
