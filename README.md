@@ -1,0 +1,1 @@
+https://adinfochecker.netlify.app/
